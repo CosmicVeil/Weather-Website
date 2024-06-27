@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<body style="background-color:#33475b">
+
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather App</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <nav class="row" style="background: #002b9a; color: rgb(162, 13, 221);">
+    <h1 class="col-md-3 text-center">Weather App</h1>
+  </nav>
+  <br />
+  <br />
+  <center class="row">
+    <form method="post" class="col-md-6 col-md-offset-3">
+      <div class="input-group">
+        <input type="text" class="form-control" name="city" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+        <form>
+  </center>
+  <div class="row">
+    {% if data.country_code and data.coordinate and data.temp and data.pressure and data.humidity %}
+    <div class="col-md-6 col-md-offset-3">
+        <h1 style="color: #21cef5">City: {{data.cityname}}</h5>
+        <h2 style="color: #21cef5">Coordinates: {{data.coordinate}}</h5>
+        <h2 style="color: #21cef5">Outlook: {{data.coordinate}}</h5>
+        <h2 style="color: #21cef5">Temperature(C): {{data.temp}}</h5>
+        <h2 style="color: #21cef5">Feels Like(C): {{data.feels_like}}</h5>
+        <h3 style="color: #21cef5">Pressure: {{data.pressure}} </h5>
+        <h3 style="color: #21cef5">Humidity: {{data.humidity}}</h5>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
